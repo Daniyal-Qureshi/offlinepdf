@@ -4,16 +4,18 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "offlinepdf"
-version = "1.0.0"
+version = "1.0.2"
 description = "Privacy-first CLI tool for offline PDF processing"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 license = {text = "MIT"}
-license-files = ["LICENSE"]
+
 authors = [
     {name = "OfflinePDF Contributors"}
 ]
+
 keywords = ["pdf", "cli", "privacy", "local", "offline"]
+
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: End Users/Desktop",
@@ -42,13 +44,16 @@ dependencies = [
 offlinepdf = "offlinepdf.cli:app"
 
 [project.urls]
-Homepage = "https://github.com/yourusername/offlinepdf"
-Repository = "https://github.com/yourusername/offlinepdf"
-Issues = "https://github.com/yourusername/offlinepdf/issues"
+Homepage = "https://github.com/Daniyal-Qureshi/offlinepdf"
+Repository = "https://github.com/Daniyal-Qureshi/offlinepdf"
+Issues = "https://github.com/Daniyal-Qureshi/offlinepdf/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["offlinepdf*"]
 
 [tool.setuptools]
-packages = ["offlinepdf"]
+license-files = ["LICENSE"]
 
 [tool.setuptools.package-data]
 offlinepdf = ["py.typed"]
-

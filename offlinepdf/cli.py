@@ -11,10 +11,10 @@ from offlinepdf import __version__
 from offlinepdf import lock as lock_module
 from offlinepdf import compress as compress_module
 from offlinepdf import docx2pdf as docx2pdf_module
-from offlinepdf import image2pdf
-from offlinepdf import merge
+from offlinepdf import image2pdf as image2pdf_module
+from offlinepdf import merge as merge_module
 from offlinepdf import pdf2docx as pdf2docx_module
-from offlinepdf import unlock
+from offlinepdf import unlock as unlock_module
 from offlinepdf.utils import print_error, print_info
 
 app = typer.Typer(
@@ -70,7 +70,7 @@ def unlock(
         # Creates: output.pdf
     """
     try:
-        unlock.unlock_pdf(input_pdf, password, output)
+        unlock_module.unlock_pdf(input_pdf, password, output)
     except Exception as e:
         print_error(str(e))
         sys.exit(1)
@@ -140,7 +140,7 @@ def merge(
         # Creates: merged.pdf
     """
     try:
-        merge.merge_pdfs(input_pdfs, output)
+        merge_module.merge_pdfs(input_pdfs, output)
     except Exception as e:
         print_error(str(e))
         sys.exit(1)
@@ -210,7 +210,7 @@ def image2pdf(
         # Creates: output.pdf
     """
     try:
-        image2pdf.image_to_pdf(input_image, output)
+        image2pdf_module.image_to_pdf(input_image, output)
     except Exception as e:
         print_error(str(e))
         sys.exit(1)
